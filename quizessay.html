@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Soal Essay: Document Object Model</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            transition: background-color 0.5s ease;
+        }
+
+        .flower-gallery {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .flower-gallery img {
+            width: 150px;
+            height: 180px;
+            object-fit: cover;
+            cursor: pointer;
+            border: 1px solid #ccc;
+        }
+
+        #basket {
+            margin-top: 20px;
+            padding: 10px;
+            border-style: solid; 
+            min-height: 100px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+        }
+
+        #basket img {
+            width: 80px; 
+            height: 80px;
+            object-fit: cover;
+            cursor: pointer;
+            border: 2px solid #666;
+            margin: 0; 
+        }
+
+        #basketstat {
+            width: 100%; 
+            margin-bottom: 0; 
+        }
+
+        input[type="button"] {
+            padding: 5px 10px;
+            margin-right: 5px;
+            cursor: pointer;
+        }
+
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none; 
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background: #f0f0f0;
+            padding: 20px;
+            border: 1px solid #aaa;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            width: 300px;
+            text-align: left;
+        }
+
+        .modal-prompt {
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        #colorInput {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0 15px 0;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        .modal-buttons {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+        }
+
+        .modal-buttons button {
+            padding: 6px 15px;
+            border: 1px solid #999;
+            background-color: #fff;
+            cursor: pointer;
+        }
+        
+        #applyBtn {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+
+<body id="bd">
+    <h1>Soal Essay: Document Object Model</h1>
+    
+    <div class="flower-gallery"> 
+        <img id="img1" src="thumbnails\flo1.jpg">
+        <img id="img2" src="thumbnails\flo2.jpg">
+        <img id="img3" src="thumbnails\flo3.jpg">
+    </div>
+
+    <div>
+        <p id="text1">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+
+    <form action="#">
+        <input type="button" id="chtext" value="Change Text Color">
+        <input type="button" id="bccol" value="Change Background Color">
+    </form>
+
+    <div id="basket" style="border-style:solid">
+        <p id="basketstat">The flower basket currently contains 0 flowers.</p>
+    </div>
+
+    <div id="colorModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-prompt">Masukkan Warna (mis. red, blue, etc):</div>
+            <input type="text" id="colorInput">
+            <div class="modal-buttons">
+                <button id="cancelBtn">Cancel</button>
+                <button id="applyBtn">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
